@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio DKV - Carissa Anandhita</title>
+
+    <title>Carissa Anandhita — DKV Portfolio</title>
 
     <style>
         * {
@@ -16,517 +17,146 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #222222;
-            line-height: 1.6;
+            background: #fff;
+            color: #111;
         }
 
-        /* NAVBAR */
-        nav {
+        /* ================= NAVBAR ================= */
+
+        header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #eeeeee;
-            padding: 18px 8%;
+            padding: 25px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .logo span {
-            color: #777777;
-        }
-
-        nav ul {
+        nav {
             display: flex;
-            list-style: none;
-            gap: 30px;
+            gap: 35px;
         }
 
-        nav ul li a {
+        nav a {
+            color: #111;
             text-decoration: none;
-            color: #333333;
             font-size: 14px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
-        nav ul li a:hover {
-            color: #888888;
+        nav a:hover {
+            opacity: .45;
         }
 
-        /* HERO */
+
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 100vh;
+            padding: 160px 7% 80px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 120px 8% 70px;
-            gap: 50px;
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero-text small {
-            color: #888888;
-            letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(45px, 7vw, 85px);
-            line-height: 1;
-            margin: 20px 0;
-            font-weight: 800;
-        }
-
-        .hero-text h1 span {
-            color: #888888;
-        }
-
-        .hero-text p {
-            color: #666666;
-            font-size: 17px;
-            max-width: 520px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 13px 28px;
-            background: #222222;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #555555;
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            width: 380px;
-            height: 480px;
-            border: 1px solid #dddddd;
-            display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            color: #999999;
-            text-align: center;
-            background: #fafafa;
         }
 
-        /* SECTION */
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            margin-bottom: 50px;
-        }
-
-        .section-title small {
-            color: #999999;
-            letter-spacing: 3px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-            margin-top: 8px;
-        }
-
-        /* ABOUT */
-        .about {
-            background: #fafafa;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .about-content p {
-            color: #666666;
-            font-size: 16px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .skill {
-            padding: 18px;
-            background: white;
-            border: 1px solid #eeeeee;
-        }
-
-        .skill strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .skill span {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        /* PORTFOLIO */
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            border: 1px solid #eeeeee;
-            background: white;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-        }
-
-        .project-image {
-            height: 250px;
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #999999;
-        }
-
-        .project-info {
-            padding: 22px;
-        }
-
-        .project-info h3 {
-            margin-bottom: 7px;
-        }
-
-        .project-info p {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        /* CONTACT */
-        .contact {
-            background: #fafafa;
-            text-align: center;
-        }
-
-        .contact p {
-            color: #777777;
+        .hero-label {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #888;
             margin-bottom: 25px;
         }
 
-        .contact-info {
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 150px);
+            line-height: .85;
+            letter-spacing: -7px;
+            font-weight: 800;
+            max-width: 1000px;
+        }
+
+        .hero h1 span {
+            color: #999;
+        }
+
+        .hero-bottom {
             display: flex;
-            justify-content: center;
-            gap: 35px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: end;
+            margin-top: 70px;
+            max-width: 1000px;
         }
 
-        .contact-info a {
-            color: #333333;
-            text-decoration: none;
+        .hero-description {
+            max-width: 430px;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
         }
 
-        /* FOOTER */
-        footer {
-            background: #222222;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 14px;
+        .scroll {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #888;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 850px) {
-            nav {
-                padding: 15px 5%;
-            }
 
-            nav ul {
-                gap: 15px;
-            }
+        /* ================= SECTION ================= */
 
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 130px 5% 70px;
-            }
-
-            .hero-image {
-                width: 100%;
-                max-width: 380px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio {
-                grid-template-columns: 1fr 1fr;
-            }
+        section {
+            padding: 130px 7%;
         }
 
-        @media (max-width: 550px) {
-            nav ul {
-                display: none;
-            }
-
-            section {
-                padding: 70px 5%;
-            }
-
-            .portfolio {
-                grid-template-columns: 1fr;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
+        .section-number {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
         }
-    </style>
-</head>
 
-<body>
-
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">CARISSA<span>.</span></div>
-
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-            <small>DESAIN KOMUNIKASI VISUAL</small>
-
-            <h1>
-                Carissa<br>
-                <span>Anandhita.</span>
-            </h1>
-
-            <p>
-                Pelajar DKV yang memiliki ketertarikan pada desain grafis,
-                fotografi, branding, dan pembuatan karya visual kreatif.
-            </p>
-
-            <a href="#portfolio" class="button">
-                Lihat Portfolio
-            </a>
-        </div>
-
-        <div class="hero-image">
-            <div>
-                <strong>FOTO / PROFILE</strong><br>
-                <small>Tambahkan foto di sini</small>
-            </div>
-        </div>
-
-    </section>
+        .section-title {
+            font-size: clamp(40px, 6vw, 80px);
+            letter-spacing: -4px;
+            margin-bottom: 70px;
+        }
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+        /* ================= ABOUT ================= */
 
-        <div class="section-title">
-            <small>01 — ABOUT ME</small>
-            <h2>Tentang Saya</h2>
-        </div>
+        .about {
+            background: #f7f7f7;
+        }
 
-        <div class="about-content">
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
 
-            <div>
-                <p>
-                    Halo! Saya <strong>Carissa Anandhita</strong>, seorang
-                    pelajar yang sedang mempelajari bidang Desain Komunikasi
-                    Visual (DKV).
-                </p>
+        .about-text {
+            font-size: 25px;
+            line-height: 1.5;
+        }
 
-                <br>
+        .about-text span {
+            color: #999;
+        }
 
-                <p>
-                    Saya tertarik dalam menciptakan desain yang sederhana,
-                    menarik, dan memiliki pesan yang jelas. Saya terus
-                    mengembangkan kemampuan dalam desain grafis, fotografi,
-                    editing, dan visual branding.
-                </p>
-            </div>
+        .about-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
 
-            <div class="skills">
-
-                <div class="skill">
-                    <strong>Graphic Design</strong>
-                    <span>Poster & Visual Design</span>
-                </div>
-
-                <div class="skill">
-                    <strong>Photography</strong>
-                    <span>Foto & Komposisi</span>
-                </div>
-
-                <div class="skill">
-                    <strong>Photo Editing</strong>
-                    <span>Editing & Retouching</span>
-                </div>
-
-                <div class="skill">
-                    <strong>Branding</strong>
-                    <span>Logo & Identitas Visual</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-
-        <div class="section-title">
-            <small>02 — MY WORK</small>
-            <h2>Portfolio</h2>
-        </div>
-
-        <div class="portfolio">
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 01
-                </div>
-
-                <div class="project-info">
-                    <h3>Poster Design</h3>
-                    <p>Desain poster kreatif untuk kebutuhan promosi.</p>
-                </div>
-            </div>
-
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 02
-                </div>
-
-                <div class="project-info">
-                    <h3>Brand Identity</h3>
-                    <p>Konsep logo dan identitas visual sebuah brand.</p>
-                </div>
-            </div>
-
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 03
-                </div>
-
-                <div class="project-info">
-                    <h3>Photography</h3>
-                    <p>Karya fotografi dengan konsep visual kreatif.</p>
-                </div>
-            </div>
-
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 04
-                </div>
-
-                <div class="project-info">
-                    <h3>Social Media Design</h3>
-                    <p>Konten visual untuk kebutuhan media sosial.</p>
-                </div>
-            </div>
-
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 05
-                </div>
-
-                <div class="project-info">
-                    <h3>Creative Design</h3>
-                    <p>Eksplorasi desain dan konsep visual.</p>
-                </div>
-            </div>
-
-
-            <div class="project">
-                <div class="project-image">
-                    FOTO / DESAIN 06
-                </div>
-
-                <div class="project-info">
-                    <h3>Digital Artwork</h3>
-                    <p>Karya digital dengan pendekatan visual modern.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <div class="section-title">
-            <small>03 — CONTACT</small>
-            <h2>Let's Connect</h2>
-        </div>
-
-        <p>
-            Tertarik melihat karya saya atau ingin berkolaborasi?
-        </p>
-
-        <div class="contact-info">
-            <a href="mailto:emailkamu@gmail.com">
-                Email
-            </a>
-
-            <a href="#">
-                Instagram
-            </a>
-
-            <a href="#">
-                WhatsApp
-            </a>
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-        © 2026 Carissa Anandhita — DKV Portfolio
-    </footer>
-
-</body>
-</html>
+        .info-box {
 ```
