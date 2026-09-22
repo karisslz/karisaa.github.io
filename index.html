@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rezky Aditya | DKV Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00ff9d;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ff9d;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 120px 8% 60px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #00ff9d;
+            filter: blur(180px);
+            opacity: 0.12;
+            top: 10%;
+            left: -100px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            animation: fadeUp 1s ease;
+        }
+
+        .small-text {
+            color: #00ff9d;
+            font-size: 15px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #00ff9d;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #00ff9d;
+            color: #080808;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,255,157,0.25);
+        }
+
+        /* PROFILE */
+        .profile {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            border: 2px solid #00ff9d;
+            padding: 10px;
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* SECTION */
+        section {
+            padding: 100px 8%;
+        }
+
+        .title {
+            margin-bottom: 50px;
+        }
+
+        .title small {
+            color: #00ff9d;
+            letter-spacing: 3px;
+        }
+
+        .title h2 {
+            font-size: 45px;
+            margin-top: 10px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #0d0d0d;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #aaa;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            border: 1px solid #333;
+            padding: 12px 18px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #00ff9d;
+            color: #00ff9d;
+            transform: translateY(-3px);
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            background: #080808;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            background: #151515;
+            min-height: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.9)
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 25px;
+            color: #00ff9d;
+            margin-bottom: 5px;
+        }
+
+        .overlay p {
+            color: #ddd;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #0d0d0d;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            padding: 35px;
+            border: 1px solid #252525;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+            border-color: #00ff9d;
+        }
+
+        .service-number {
+            color: #00ff9d;
+            font-size: 14px;
+        }
+
+        .service h3 {
+            margin: 20px 0 10px;
+            font-size: 22px;
+        }
+
+        .service p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #999;
+            margin: 15px auto 30px;
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .social {
+            margin-top: 25px;
+        }
+
+        .social a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            color: #00ff9d;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #555;
+            border-top: 1px solid #1c1c1c;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .profile {
+                width: 240px;
+                height: 240px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .title h2 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">R<span>A</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="small-text">
+                DKV STUDENT • CREATIVE DESIGNER
+            </div>
+
+            <h1>
+                Hello,<br>
+                I'm <span>Rezky.</span>
+            </h1>
+
+            <p>
+                Saya adalah siswa Desain Komunikasi Visual yang
+                memiliki ketertarikan pada desain grafis,
+                fotografi, videografi, dan dunia kreatif.
+            </p>
+
+            <a href="#portfolio" class="button">
+                Lihat Karya →
+            </a>
+
+        </div>
+
+
+        <div class="profile">
+
+            <!-- GANTI FOTO DI SINI -->
+            <img src="foto-saya.jpg" alt="Foto Rezky Aditya">
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="title">
+            <small>01 — ABOUT ME</small>
+            <h2>Tentang Saya</h2>
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-text">
+
+                <p>
+                    Halo, saya <b>Rezky Aditya</b>. Saya merupakan
+                    siswa jurusan Desain Komunikasi Visual di
+                    SMK PGRI 1 Kota Tangerang.
+                </p>
+
+                <p>
+                    Saya senang membuat karya visual seperti poster,
+                    desain media sosial, fotografi, videografi,
+                    dan berbagai karya kreatif lainnya.
+                </p>
+
+            </div>
+
+            <div class="skills">
+
+                <div class="skill">Graphic Design</div>
+                <div class="skill">Canva</div>
+                <div class="skill">Photography</div>
+                <div class="skill">Videography</div>
+                <div class="skill">Photo Editing</div>
+                <div class="skill">Video Editing</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+
+        <div class="title">
+            <small>02 — MY WORK</small>
+            <h2>Portofolio</h2>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <!-- KARYA 1 -->
+            <div class="card">
+
+                <img src="poster.jpg" alt="Poster Design">
+
+                <div class="overlay">
+                    <h3>Poster Design</h3>
+                    <p>Graphic Design</p>
+                </div>
+
+            </div>
+
+
+            <!-- KARYA 2 -->
+            <div class="card">
+
+                <img src="fotografi.jpg" alt="Photography">
+
+                <div class="overlay">
+                    <h3>Photography</h3>
+                    <p>Photography Project</p>
+                </div>
+
+            </div>
+
+
+            <!-- KARYA 3 -->
+            <div class="card">
+
+                <img src="logo.jpg" alt="Logo Design">
+
+                <div class="overlay">
+                    <h3>Logo Design</h3>
+                    <p>Brand Identity</p>
+                </div>
+
+            </div>
+
+
+            <!-- KARYA 4 -->
+            <div class="card">
+
+                <img src="video.jpg" alt="Video Editing">
+
+                <div class="overlay">
+                    <h3>Video Editing</h3>
+                    <p>Multimedia Project</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="services" id="services">
+
+        <div class="title">
+            <small>03 — WHAT I DO</small>
+            <h2>Keahlian</h2>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service">
+                <span class="service-number">01</span>
+                <h3>Graphic Design</h3>
+                <p>
+                    Membuat poster, banner, desain sosial media,
+                    dan berbagai kebutuhan visual.
+                </p>
+            </div>
+
+            <div class="service">
+                <span class="service-number">02</span>
+                <h3>Photography</h3>
+                <p>
+                    Menghasilkan foto dengan memperhatikan
+                    komposisi, pencahayaan, dan konsep visual.
+                </p>
+            </div>
+
+            <div class="service">
+                <span class="service-number">03</span>
+                <h3>Video Editing</h3>
+                <p>
+                    Mengedit video untuk menghasilkan konten
+                    yang menarik dan komunikatif.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="title">
+            <small>04 — CONTACT</small>
+            <h2>Mari Terhubung</h2>
+        </div>
+
+        <p>
+            Jika ingin melihat lebih banyak karya saya
+            atau ingin menghubungi saya, silakan melalui
+            kontak di bawah ini.
+        </p>
+
+        <a href="mailto:emailkamu@gmail.com" class="button">
+            Email Saya
+        </a>
+
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">GitHub</a>
+            <a href="#">TikTok</a>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Rezky Aditya — DKV Portfolio
+    </footer>
+
+
+</body>
+</html>
