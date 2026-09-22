@@ -3,341 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carissa Anandhita — DKV Student</title>
+
+    <title>Carissa Anandhita | Portofolio DKV</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #fff;
-            color: #111;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
+            background: #ffffff;
+            color: #111111;
+            line-height: 1.6;
         }
 
         /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            padding: 25px 6%;
+            padding: 22px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eeeeee;
             z-index: 1000;
-            border-bottom: 1px solid #eee;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -2px;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .nav-links {
+        .logo span {
+            color: #777777;
+        }
+
+        nav ul {
             display: flex;
-            gap: 35px;
             list-style: none;
-            font-size: 13px;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #111111;
+            font-size: 14px;
             font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .nav-links a {
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -7px;
-            width: 0;
-            height: 1px;
-            background: #111;
             transition: 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        nav ul li a:hover {
+            color: #777777;
         }
 
         /* HERO */
         .hero {
             min-height: 100vh;
-            padding: 170px 6% 80px;
+            padding: 160px 8% 80px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .small-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #777777;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 120px);
+            line-height: 0.9;
+            letter-spacing: -7px;
+            margin-bottom: 35px;
+        }
+
+        .hero h1 span {
+            color: #888888;
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #666666;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #111111;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #555555;
+            transform: translateY(-3px);
+        }
+
+        /* CIRCLE */
+        .hero-shape {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
             justify-content: center;
             position: relative;
         }
 
-        .small-title {
-            font-size: 12px;
-            letter-spacing: 4px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #777;
-        }
-
-        .hero h1 {
-            font-size: clamp(65px, 12vw, 170px);
-            line-height: 0.85;
-            letter-spacing: -8px;
-            font-weight: 900;
-            max-width: 1200px;
-        }
-
-        .hero h1 span {
-            color: #999;
-        }
-
-        .hero-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-top: 70px;
-        }
-
-        .hero-description {
-            max-width: 480px;
-            font-size: 17px;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        .scroll {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* CIRCLE */
-        .circle {
+        .hero-shape::before {
+            content: "DKV";
             position: absolute;
-            right: 8%;
-            top: 42%;
-            width: 130px;
-            height: 130px;
-            border: 1px solid #111;
+            font-size: 80px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -5px;
+        }
+
+        .hero-shape::after {
+            content: "";
+            width: 230px;
+            height: 230px;
+            border: 1px solid #cccccc;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: rotate 12s linear infinite;
-        }
-
-        .circle::before {
-            content: "CREATIVE • DESIGN • DKV • ";
-            font-size: 9px;
-            letter-spacing: 2px;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* MARQUEE */
-        .marquee {
-            overflow: hidden;
-            border-top: 1px solid #111;
-            border-bottom: 1px solid #111;
-            padding: 22px 0;
-            white-space: nowrap;
-        }
-
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 18s linear infinite;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 5px;
-        }
-
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
         }
 
         /* SECTION */
         section {
-            padding: 130px 6%;
-        }
-
-        .section-number {
-            font-size: 12px;
-            color: #888;
-            letter-spacing: 3px;
-            margin-bottom: 35px;
+            padding: 110px 8%;
         }
 
         .section-title {
-            font-size: clamp(45px, 7vw, 95px);
-            line-height: 0.95;
-            letter-spacing: -5px;
-            margin-bottom: 60px;
+            font-size: 55px;
+            letter-spacing: -3px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #999999;
         }
 
         /* ABOUT */
-        .about-grid {
+        .about {
+            background: #f7f7f7;
+        }
+
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
         }
 
-        .about-text {
-            font-size: 24px;
-            line-height: 1.5;
+        .about-text p {
+            font-size: 20px;
+            color: #555555;
+            max-width: 650px;
         }
 
-        .about-small {
-            color: #666;
-            line-height: 1.8;
-            font-size: 15px;
+        .info {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-box {
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 15px;
+        }
+
+        .info-box small {
+            color: #888888;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-box strong {
+            font-size: 18px;
         }
 
         /* SKILLS */
-        .skills {
-            border-top: 1px solid #ddd;
-        }
-
-        .skill-list {
+        .skills-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-top: 1px solid #111;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .skill {
-            padding: 30px 0;
-            border-bottom: 1px solid #ddd;
-            font-size: 22px;
-            display: flex;
-            justify-content: space-between;
+            padding: 35px;
+            border: 1px solid #dddddd;
+            border-radius: 20px;
+            transition: 0.3s;
         }
 
-        .skill span {
-            color: #999;
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #111111;
+        }
+
+        .skill-number {
             font-size: 13px;
+            color: #999999;
         }
 
-        /* PROCESS */
-        .process-list {
-            border-top: 1px solid #111;
+        .skill h3 {
+            font-size: 24px;
+            margin: 20px 0 10px;
         }
 
-        .process-item {
-            display: grid;
-            grid-template-columns: 100px 1fr 1fr;
-            gap: 30px;
-            padding: 35px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .process-number {
-            color: #999;
-            font-size: 13px;
-        }
-
-        .process-item h3 {
-            font-size: 25px;
-        }
-
-        .process-item p {
-            color: #666;
-            line-height: 1.7;
+        .skill p {
+            color: #777777;
             font-size: 14px;
         }
 
         /* CONTACT */
         .contact {
-            background: #111;
-            color: #fff;
+            background: #111111;
+            color: white;
+            text-align: center;
         }
 
-        .contact .section-number {
-            color: #999;
+        .contact .section-title {
+            color: white;
         }
 
-        .contact-title {
-            font-size: clamp(50px, 9vw, 130px);
-            line-height: 0.9;
-            letter-spacing: -6px;
-            margin-bottom: 70px;
+        .contact p {
+            color: #aaaaaa;
+            max-width: 600px;
+            margin: 0 auto 35px;
         }
 
-        .contact-title span {
-            color: #777;
+        .contact .button {
+            background: white;
+            color: #111111;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-        }
-
-        .email {
-            font-size: 25px;
-            border-bottom: 1px solid #fff;
-            padding-bottom: 8px;
-        }
-
-        .social {
-            display: flex;
-            gap: 25px;
-            font-size: 13px;
+        .contact .button:hover {
+            background: #dddddd;
         }
 
         /* FOOTER */
         footer {
-            background: #111;
-            color: #777;
-            padding: 25px 6%;
-            border-top: 1px solid #333;
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            letter-spacing: 1px;
+            background: #111111;
+            border-top: 1px solid #333333;
+            color: #888888;
+            padding: 25px 8%;
+            text-align: center;
+            font-size: 13px;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
 
             nav {
-                padding: 20px 5%;
+                padding: 18px 6%;
             }
 
-            .nav-links {
+            nav ul {
                 gap: 15px;
-                font-size: 10px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
             }
 
             .hero {
-                padding: 150px 5% 70px;
+                padding: 130px 6% 70px;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .hero h1 {
@@ -345,49 +299,36 @@
                 letter-spacing: -4px;
             }
 
-            .hero-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
+            .hero-shape {
+                width: 230px;
+                height: 230px;
+                align-self: center;
             }
 
-            .circle {
-                width: 90px;
-                height: 90px;
-                right: 7%;
-                top: 35%;
+            .hero-shape::before {
+                font-size: 55px;
             }
 
-            .about-grid {
+            .hero-shape::after {
+                width: 160px;
+                height: 160px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
-            .skill-list {
+            .skills-container {
                 grid-template-columns: 1fr;
-            }
-
-            .process-item {
-                grid-template-columns: 50px 1fr;
-            }
-
-            .process-item p {
-                grid-column: 2;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 40px;
-            }
-
-            .email {
-                font-size: 18px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 10px;
             }
         }
     </style>
@@ -397,88 +338,89 @@
 
     <!-- NAVBAR -->
     <nav>
-        <div class="logo">CA.</div>
+        <div class="logo">
+            Carissa<span>.</span>
+        </div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Expertise</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#contact">Kontak</a></li>
         </ul>
     </nav>
 
 
     <!-- HERO -->
-    <main id="home" class="hero">
+    <section class="hero" id="home">
 
-        <div class="small-title">
-            DKV STUDENT · VISUAL DESIGNER
-        </div>
+        <div class="hero-text">
 
-        <h1>
-            Carissa<br>
-            <span>Anandhita.</span>
-        </h1>
-
-        <div class="hero-bottom">
-
-            <p class="hero-description">
-                Seorang siswa Desain Komunikasi Visual yang
-                memiliki ketertarikan pada desain grafis,
-                visual communication, photography, dan
-                creative design.
-            </p>
-
-            <div class="scroll">
-                ↓ Scroll to explore
+            <div class="small-title">
+                Desain Komunikasi Visual
             </div>
 
+            <h1>
+                Carissa<br>
+                <span>Anandhita.</span>
+            </h1>
+
+            <p>
+                Pelajar DKV yang memiliki ketertarikan pada dunia desain,
+                visual, kreativitas, dan komunikasi melalui karya.
+            </p>
+
+            <a href="#about" class="button">
+                Kenali Saya →
+            </a>
+
         </div>
 
-        <div class="circle"></div>
+        <div class="hero-shape"></div>
 
-    </main>
-
-
-    <!-- MARQUEE -->
-    <div class="marquee">
-        <div class="marquee-content">
-            GRAPHIC DESIGN • PHOTOGRAPHY • BRANDING • VISUAL ART •
-            GRAPHIC DESIGN • PHOTOGRAPHY • BRANDING • VISUAL ART •
-        </div>
-    </div>
+    </section>
 
 
     <!-- ABOUT -->
-    <section id="about">
-
-        <div class="section-number">
-            01 — ABOUT
-        </div>
+    <section class="about" id="about">
 
         <h2 class="section-title">
-            About<br>Me.
+            Tentang <span>Saya</span>
         </h2>
 
-        <div class="about-grid">
+        <div class="about-content">
 
             <div class="about-text">
-                Saya Carissa Anandhita,
-                seorang siswa jurusan Desain Komunikasi Visual
-                yang tertarik pada dunia kreatif dan visual.
+                <p>
+                    Halo, saya <strong>Carissa Anandhita</strong>.
+                    Saya adalah seorang pelajar Desain Komunikasi Visual
+                    yang tertarik untuk mengembangkan kreativitas melalui
+                    desain dan media visual.
+                </p>
             </div>
 
-            <div class="about-small">
-                Saya senang mempelajari bagaimana sebuah ide
-                dapat dikembangkan menjadi sebuah komunikasi
-                visual yang menarik dan mudah dipahami.
+            <div class="info">
 
-                <br><br>
+                <div class="info-box">
+                    <small>Nama</small>
+                    <strong>Carissa Anandhita</strong>
+                </div>
 
-                Bagi saya, desain bukan hanya tentang membuat
-                sesuatu terlihat menarik, tetapi juga bagaimana
-                menyampaikan pesan melalui visual.
+                <div class="info-box">
+                    <small>Bidang</small>
+                    <strong>Desain Komunikasi Visual</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Fokus</small>
+                    <strong>Creative Design & Visual</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Status</small>
+                    <strong>Pelajar</strong>
+                </div>
+
             </div>
 
         </div>
@@ -487,114 +429,38 @@
 
 
     <!-- SKILLS -->
-    <section id="skills" class="skills">
-
-        <div class="section-number">
-            02 — EXPERTISE
-        </div>
+    <section id="skills">
 
         <h2 class="section-title">
-            What I<br>Do.
+            Keahlian <span>Saya</span>
         </h2>
 
-        <div class="skill-list">
+        <div class="skills-container">
 
             <div class="skill">
-                Graphic Design
-                <span>01</span>
-            </div>
-
-            <div class="skill">
-                Visual Communication
-                <span>02</span>
-            </div>
-
-            <div class="skill">
-                Photography
-                <span>03</span>
-            </div>
-
-            <div class="skill">
-                Typography
-                <span>04</span>
-            </div>
-
-            <div class="skill">
-                Branding
-                <span>05</span>
-            </div>
-
-            <div class="skill">
-                Creative Concept
-                <span>06</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROCESS -->
-    <section id="process">
-
-        <div class="section-number">
-            03 — PROCESS
-        </div>
-
-        <h2 class="section-title">
-            My<br>Process.
-        </h2>
-
-        <div class="process-list">
-
-            <div class="process-item">
-                <div class="process-number">01</div>
-
-                <h3>Research</h3>
-
+                <span class="skill-number">01</span>
+                <h3>Graphic Design</h3>
                 <p>
-                    Memahami kebutuhan, mencari referensi,
-                    dan mengembangkan informasi sebagai dasar
-                    sebelum membuat konsep visual.
+                    Membuat desain visual yang menarik,
+                    komunikatif, dan memiliki konsep.
                 </p>
             </div>
 
-
-            <div class="process-item">
-                <div class="process-number">02</div>
-
-                <h3>Concept</h3>
-
+            <div class="skill">
+                <span class="skill-number">02</span>
+                <h3>Visual Branding</h3>
                 <p>
-                    Menentukan konsep, gaya visual,
-                    tipografi, dan elemen yang sesuai
-                    dengan pesan yang ingin disampaikan.
+                    Mengembangkan identitas visual agar
+                    terlihat konsisten dan profesional.
                 </p>
             </div>
 
-
-            <div class="process-item">
-                <div class="process-number">03</div>
-
-                <h3>Design</h3>
-
+            <div class="skill">
+                <span class="skill-number">03</span>
+                <h3>Creative Thinking</h3>
                 <p>
-                    Mengembangkan konsep menjadi sebuah
-                    rancangan visual yang sederhana,
-                    menarik, dan komunikatif.
-                </p>
-            </div>
-
-
-            <div class="process-item">
-                <div class="process-number">04</div>
-
-                <h3>Refine</h3>
-
-                <p>
-                    Melakukan evaluasi dan penyempurnaan
-                    agar desain dapat terlihat lebih
-                    konsisten dan profesional.
+                    Mengembangkan ide kreatif menjadi
+                    konsep visual yang menarik.
                 </p>
             </div>
 
@@ -604,46 +470,30 @@
 
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
 
-        <div class="section-number">
-            04 — CONTACT
-        </div>
-
-        <h2 class="contact-title">
-            Let's<br>
-            <span>Connect.</span>
+        <h2 class="section-title">
+            Mari <span>Terhubung.</span>
         </h2>
 
-        <div class="contact-info">
+        <p>
+            Terima kasih telah mengunjungi portofolio saya.
+            Jangan ragu untuk menghubungi saya untuk berdiskusi
+            mengenai desain dan kreativitas.
+        </p>
 
-            <a href="mailto:carissa@example.com" class="email">
-                carissa@example.com
-            </a>
-
-            <div class="social">
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="#">LinkedIn</a>
-            </div>
-
-        </div>
+        <a href="mailto:emailkamu@gmail.com" class="button">
+            Hubungi Saya
+        </a>
 
     </section>
 
 
     <!-- FOOTER -->
     <footer>
-
-        <div>
-            © 2026 Carissa Anandhita
-        </div>
-
-        <div>
-            DKV · VISUAL DESIGN
-        </div>
-
+        © 2026 Carissa Anandhita — DKV Portfolio
     </footer>
 
 </body>
 </html>
+```
