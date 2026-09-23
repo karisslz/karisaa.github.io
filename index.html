@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Carissa Anandhita Putri — DKV Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,318 +20,548 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0b0b0b;
-            color: white;
+            font-family: "Inter", sans-serif;
+            background: #ffffff;
+            color: #111111;
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* ================= NAVBAR ================= */
+
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 20px 8%;
+            height: 72px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 11, 11, 0.85);
+
+            padding: 0 8%;
+
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #eeeeee;
+
             z-index: 1000;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #8b5cf6;
+            color: #6c63ff;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 28px;
         }
 
         nav ul li a {
-            color: white;
             text-decoration: none;
+            color: #555555;
             font-size: 14px;
+            font-weight: 500;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #8b5cf6;
+            color: #6c63ff;
         }
 
-        /* GENERAL */
+        /* ================= GENERAL ================= */
+
         section {
-            padding: 100px 8%;
-            min-height: 100vh;
+            padding: 110px 8%;
+        }
+
+        .section-label {
+            color: #6c63ff;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 40px;
-            margin-bottom: 50px;
+            font-size: 42px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
         }
 
-        .section-title span {
-            color: #8b5cf6;
+        .section-description {
+            color: #666666;
+            max-width: 600px;
         }
 
-        /* HOME */
+        /* ================= HOME ================= */
+
         #home {
+            min-height: 100vh;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+
+            gap: 60px;
+            padding-top: 140px;
         }
 
-        .home-text {
-            max-width: 650px;
+        .hero-text {
+            max-width: 700px;
         }
 
-        .home-text small {
-            color: #8b5cf6;
-            font-size: 16px;
+        .small-text {
+            color: #6c63ff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
         }
 
-        .home-text h1 {
-            font-size: clamp(45px, 7vw, 85px);
-            line-height: 1;
-            margin: 15px 0;
+        .hero-title {
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.95;
+            letter-spacing: -6px;
+            margin-bottom: 28px;
         }
 
-        .home-text h1 span {
-            color: #8b5cf6;
+        .hero-title span {
+            color: #6c63ff;
         }
 
-        .home-text p {
-            color: #aaa;
-            max-width: 550px;
+        .hero-description {
+            max-width: 560px;
+            color: #666666;
             font-size: 17px;
+            margin-bottom: 35px;
         }
 
-        .button {
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 13px 25px;
-            background: #8b5cf6;
-            color: white;
+            padding: 13px 22px;
+            border-radius: 50px;
+
             text-decoration: none;
-            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+
             transition: 0.3s;
         }
 
-        .button:hover {
+        .btn-primary {
+            background: #111111;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6c63ff;
             transform: translateY(-3px);
-            background: #7044d8;
         }
 
-        /* FOTO PROFIL */
-        .profile {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+        .btn-secondary {
+            border: 1px solid #dddddd;
+            color: #111111;
+        }
+
+        .btn-secondary:hover {
+            border-color: #6c63ff;
+            color: #6c63ff;
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE */
+
+        .profile-box {
+            width: 330px;
+            height: 430px;
+
+            background: #f5f5f5;
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+
+            border: 1px solid #eeeeee;
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 5px solid #8b5cf6;
-            box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
         }
 
-        /* ABOUT */
-        .about-container {
+        /* ================= ABOUT ================= */
+
+        #about {
+            background: #f8f8f8;
+        }
+
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 70px;
             align-items: center;
         }
 
-        .about-text p {
-            color: #aaa;
-            margin-bottom: 15px;
-        }
-
-        .info-box {
+        .about-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
 
-        .info {
-            background: #151515;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #252525;
+        .info-card {
+            background: white;
+            border: 1px solid #e9e9e9;
+            padding: 22px;
+            border-radius: 16px;
         }
 
-        .info h3 {
-            color: #8b5cf6;
-            font-size: 15px;
+        .info-card small {
+            color: #888888;
+            display: block;
             margin-bottom: 5px;
         }
 
-        .info p {
-            color: #ddd;
+        .info-card strong {
+            font-size: 15px;
         }
 
-        /* SKILLS */
-        .skills {
+        /* ================= SKILLS ================= */
+
+        .skills-header {
+            margin-bottom: 45px;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
         }
 
-        .skill {
-            background: #151515;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #252525;
+        .skill-card {
+            padding: 28px;
+            min-height: 190px;
+
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+
+            background: white;
+
             transition: 0.3s;
         }
 
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #8b5cf6;
-        }
-
-        .skill h3 {
-            margin-bottom: 10px;
-        }
-
-        .skill p {
-            color: #999;
-        }
-
-        /* PROJECT */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            background: #151515;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #252525;
-            transition: 0.3s;
-        }
-
-        .project:hover {
+        .skill-card:hover {
             transform: translateY(-7px);
-            border-color: #8b5cf6;
+            border-color: #6c63ff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
         }
 
-        .project img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
+        .skill-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f0efff;
+            color: #6c63ff;
+
+            border-radius: 12px;
+
+            font-weight: 800;
+            margin-bottom: 25px;
         }
 
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-content h3 {
+        .skill-card h3 {
+            font-size: 17px;
             margin-bottom: 8px;
         }
 
-        .project-content p {
-            color: #999;
-            font-size: 14px;
+        .skill-card p {
+            font-size: 13px;
+            color: #777777;
         }
 
-        /* EXPERIENCE */
+        /* ================= SOFTWARE ================= */
+
+        #software {
+            background: #111111;
+            color: white;
+        }
+
+        #software .section-description {
+            color: #aaaaaa;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-top: 40px;
+        }
+
+        .software-card {
+            padding: 25px 15px;
+            text-align: center;
+
+            border: 1px solid #2d2d2d;
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .software-card:hover {
+            border-color: #6c63ff;
+            transform: translateY(-5px);
+        }
+
+        .software-card .software-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #6c63ff;
+            margin-bottom: 8px;
+        }
+
+        .software-card p {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
         .experience {
-            max-width: 800px;
+            margin-top: 45px;
+            border-left: 2px solid #6c63ff;
+            padding-left: 35px;
         }
 
         .experience-item {
-            padding: 25px;
-            margin-bottom: 20px;
-            background: #151515;
-            border-left: 4px solid #8b5cf6;
-            border-radius: 8px;
+            position: relative;
+            max-width: 700px;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+
+            width: 12px;
+            height: 12px;
+
+            background: #6c63ff;
+            border-radius: 50%;
+
+            left: -42px;
+            top: 7px;
+        }
+
+        .experience-year {
+            color: #6c63ff;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .experience-item h3 {
-            margin-bottom: 5px;
+            font-size: 27px;
+            margin-bottom: 4px;
         }
 
-        .experience-item span {
-            color: #8b5cf6;
-            font-size: 14px;
+        .experience-position {
+            color: #666666;
+            margin-bottom: 15px;
         }
 
-        .experience-item p {
-            color: #999;
-            margin-top: 10px;
+        .experience-list {
+            padding-left: 18px;
+            color: #666666;
         }
 
-        /* CONTACT */
-        #contact {
-            min-height: auto;
-            text-align: center;
+        /* ================= DKV PRODUCTION ================= */
+
+        #dkv {
+            background: #f8f8f8;
         }
 
-        .contact-text {
-            color: #999;
-            max-width: 600px;
-            margin: auto;
+        .dkv-box {
+            margin-top: 40px;
+            padding: 45px;
+
+            background: white;
+            border: 1px solid #e5e5e5;
+
+            border-radius: 25px;
         }
 
-        .social {
-            margin-top: 30px;
+        .dkv-title {
+            font-size: 55px;
+            letter-spacing: -3px;
+            margin-bottom: 35px;
         }
 
-        .social a {
+        .division-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .division {
+            padding: 12px 18px;
+
+            border: 1px solid #dddddd;
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .division.active {
+            background: #6c63ff;
             color: white;
-            text-decoration: none;
-            margin: 0 10px;
+            border-color: #6c63ff;
         }
 
-        .social a:hover {
-            color: #8b5cf6;
+        /* ================= INTEREST ================= */
+
+        .interest-list {
+            margin-top: 40px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        /* FOOTER */
-        footer {
+        .interest {
+            padding: 15px 22px;
+
+            border: 1px solid #dddddd;
+            border-radius: 50px;
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .interest:hover {
+            background: #111111;
+            color: white;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            background: #111111;
+            color: white;
             text-align: center;
-            padding: 30px;
-            color: #666;
-            border-top: 1px solid #222;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
+        #contact .section-description {
+            margin: auto;
+            color: #aaaaaa;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: white;
+
+            border: 1px solid #333333;
+            padding: 13px 20px;
+            border-radius: 50px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            background: #6c63ff;
+            border-color: #6c63ff;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111111;
+            color: #666666;
+            text-align: center;
+            padding: 25px;
+            font-size: 12px;
+            border-top: 1px solid #222222;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                padding: 0 5%;
+            }
 
             nav ul {
                 gap: 15px;
             }
 
+            section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
             #home {
                 flex-direction: column;
-                text-align: center;
-                padding-top: 150px;
+                align-items: flex-start;
             }
 
-            .about-container {
+            .profile-box {
+                width: 280px;
+                height: 350px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .software-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .skills,
-            .projects {
-                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             nav {
-                padding: 15px 5%;
+                height: 65px;
             }
 
             nav ul {
@@ -335,21 +569,42 @@
             }
 
             section {
-                padding: 80px 5%;
+                padding-top: 90px;
+                padding-bottom: 90px;
             }
 
-            .skills,
-            .projects {
+            .hero-title {
+                font-size: 58px;
+                letter-spacing: -4px;
+            }
+
+            .section-title {
+                font-size: 35px;
+            }
+
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .profile {
-                width: 220px;
-                height: 220px;
+            .software-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .info-box {
+            .about-info {
                 grid-template-columns: 1fr;
+            }
+
+            .dkv-box {
+                padding: 30px;
+            }
+
+            .dkv-title {
+                font-size: 40px;
+            }
+
+            .profile-box {
+                width: 100%;
+                height: 400px;
             }
         }
     </style>
@@ -357,116 +612,123 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
+    <!-- ================= NAVBAR ================= -->
 
+    <nav>
         <div class="logo">
-            CARISSA<span>.</span>
+            Carissa<span>.</span>
         </div>
 
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#software">Software</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#dkv">DKV Production</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
     </nav>
 
 
-    <!-- HOME -->
+    <!-- ================= HOME ================= -->
+
     <section id="home">
 
-        <div class="home-text">
+        <div class="hero-text">
 
-            <small>
-                DESIGN • PHOTOGRAPHY • VIDEOGRAPHY
-            </small>
+            <div class="small-text">
+                DKV STUDENT
+            </div>
 
-            <h1>
-                Hi, I'm<br>
-                <span>Carissa.</span>
+            <h1 class="hero-title">
+                Carissa<br>
+                <span>Anandhita.</span>
             </h1>
 
-            <p>
-                Seorang siswa Desain Komunikasi Visual yang
-                memiliki ketertarikan pada dunia kreatif,
-                desain grafis, fotografi, videografi,
-                dan berbagai karya visual.
+            <p class="hero-description">
+                Saya adalah siswa Desain Komunikasi Visual yang
+                tertarik pada dunia kreatif, desain, fotografi,
+                videografi, dan media digital.
             </p>
 
-            <a href="#projects" class="button">
-                Lihat Project
-            </a>
+            <div class="buttons">
+                <a href="#about" class="btn btn-primary">
+                    About Me
+                </a>
+
+                <a href="#skills" class="btn btn-secondary">
+                    My Skills
+                </a>
+            </div>
 
         </div>
 
 
         <!-- FOTO PROFIL -->
-        <!-- Ganti carissa.jpg dengan nama file foto kamu -->
-        <img
-            src="carissa.jpg"
-            class="profile"
-            alt="Foto Carissa"
-        >
+        <div class="profile-box">
+
+            <!--
+                GANTI "profile.jpg" DENGAN FOTO KAMU.
+
+                Contoh:
+                <img src="carissa.jpg" alt="Carissa Anandhita Putri">
+            -->
+
+            <img src="profile.jpg" alt="Foto Profil">
+
+        </div>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ================= ABOUT ================= -->
+
     <section id="about">
 
-        <h2 class="section-title">
-            About <span>Me</span>
-        </h2>
+        <div class="about-grid">
 
-        <div class="about-container">
+            <div>
 
-            <div class="about-text">
+                <div class="section-label">
+                    About Me
+                </div>
 
-                <p>
-                    Halo! Saya Carissa Anandhita Putri,
-                    seorang siswa yang memiliki ketertarikan
-                    pada dunia kreatif dan visual.
-                </p>
+                <h2 class="section-title">
+                    Creative mind,<br>
+                    visual storyteller.
+                </h2>
 
-                <p>
-                    Saya senang mempelajari hal-hal baru,
-                    terutama dalam bidang desain, fotografi,
-                    videografi, dan pembuatan konten.
-                </p>
-
-                <p>
-                    Bagi saya, desain merupakan salah satu cara
-                    untuk menyampaikan ide dan cerita melalui
-                    visual yang menarik dan komunikatif.
+                <p class="section-description">
+                    Saya memiliki ketertarikan pada dunia desain dan
+                    visual. Saya senang mempelajari hal baru dan
+                    mengembangkan kemampuan di bidang Desain
+                    Komunikasi Visual.
                 </p>
 
             </div>
 
 
-            <div class="info-box">
+            <div class="about-info">
 
-                <div class="info">
-                    <h3>Nama</h3>
-                    <p>Carissa Anandhita Putri</p>
+                <div class="info-card">
+                    <small>Nama</small>
+                    <strong>Carissa Anandhita Putri</strong>
                 </div>
 
-                <div class="info">
-                    <h3>Sekolah</h3>
-                    <p>SMK</p>
+                <div class="info-card">
+                    <small>Sekolah</small>
+                    <strong>SMK</strong>
                 </div>
 
-                <div class="info">
-                    <h3>Jurusan</h3>
-                    <p>Desain Komunikasi Visual</p>
+                <div class="info-card">
+                    <small>Jurusan</small>
+                    <strong>Desain Komunikasi Visual</strong>
                 </div>
 
-                <div class="info">
-                    <h3>Fokus</h3>
-                    <p>Graphic Design</p>
+                <div class="info-card">
+                    <small>Bidang</small>
+                    <strong>Creative & Visual</strong>
                 </div>
 
             </div>
@@ -476,224 +738,107 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ================= SKILLS ================= -->
+
     <section id="skills">
 
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
+        <div class="skills-header">
 
-        <div class="skills">
+            <div class="section-label">
+                My Skills
+            </div>
 
-            <div class="skill">
+            <h2 class="section-title">
+                What I can do.
+            </h2>
+
+            <p class="section-description">
+                Beberapa kemampuan yang saya pelajari dan kembangkan
+                dalam bidang Desain Komunikasi Visual.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">GD</div>
                 <h3>Graphic Design</h3>
-
                 <p>
-                    Membuat poster, desain media sosial,
-                    banner, branding, packaging,
-                    dan berbagai kebutuhan visual.
+                    Membuat desain visual dengan memperhatikan
+                    layout, warna, tipografi, dan komposisi.
                 </p>
             </div>
 
 
-            <div class="skill">
+            <div class="skill-card">
+                <div class="skill-icon">PH</div>
                 <h3>Photography</h3>
-
                 <p>
-                    Fotografi untuk dokumentasi,
-                    produk, kegiatan, maupun
-                    eksplorasi visual.
+                    Mengambil foto dengan memperhatikan
+                    komposisi, angle, lighting, dan moment.
                 </p>
             </div>
 
 
-            <div class="skill">
+            <div class="skill-card">
+                <div class="skill-icon">VD</div>
                 <h3>Videography</h3>
-
                 <p>
-                    Membuat video kreatif,
-                    dokumentasi kegiatan,
-                    dan video storytelling.
+                    Mengambil video untuk kebutuhan dokumentasi
+                    dan konten visual.
                 </p>
             </div>
 
 
-            <div class="skill">
+            <div class="skill-card">
+                <div class="skill-icon">VE</div>
                 <h3>Video Editing</h3>
-
                 <p>
-                    Mengolah footage menjadi
-                    video yang menarik dan
-                    sesuai dengan konsep.
-                </p>
-            </div>
-
-
-            <div class="skill">
-                <h3>Content Creation</h3>
-
-                <p>
-                    Membuat ide, konsep, dan
-                    konten visual untuk berbagai
-                    kebutuhan media sosial.
-                </p>
-            </div>
-
-
-            <div class="skill">
-                <h3>Creative Thinking</h3>
-
-                <p>
-                    Mengembangkan ide kreatif
-                    menjadi konsep visual yang
+                    Mengolah footage menjadi video yang lebih
                     menarik dan komunikatif.
                 </p>
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects">
-
-        <h2 class="section-title">
-            Selected <span>Projects</span>
-        </h2>
-
-        <div class="projects">
-
-
-            <div class="project">
-
-                <img
-                    src="project1.jpg"
-                    alt="Project Poster"
-                >
-
-                <div class="project-content">
-
-                    <h3>Poster Design</h3>
-
-                    <p>
-                        Desain poster dengan
-                        eksplorasi typography,
-                        layout, warna, dan visual.
-                    </p>
-
-                </div>
-
+            <div class="skill-card">
+                <div class="skill-icon">IL</div>
+                <h3>Illustration</h3>
+                <p>
+                    Membuat ilustrasi digital dan elemen visual
+                    sederhana.
+                </p>
             </div>
 
 
-            <div class="project">
-
-                <img
-                    src="project2.jpg"
-                    alt="Project Photography"
-                >
-
-                <div class="project-content">
-
-                    <h3>Photography</h3>
-
-                    <p>
-                        Eksplorasi fotografi
-                        melalui dokumentasi
-                        dan creative photography.
-                    </p>
-
-                </div>
-
+            <div class="skill-card">
+                <div class="skill-icon">SM</div>
+                <h3>Social Media</h3>
+                <p>
+                    Membuat konsep visual untuk kebutuhan
+                    media sosial.
+                </p>
             </div>
 
 
-            <div class="project">
-
-                <img
-                    src="project3.jpg"
-                    alt="Project Branding"
-                >
-
-                <div class="project-content">
-
-                    <h3>Branding & Packaging</h3>
-
-                    <p>
-                        Eksplorasi identitas visual,
-                        desain packaging,
-                        dan mockup produk.
-                    </p>
-
-                </div>
-
+            <div class="skill-card">
+                <div class="skill-icon">BR</div>
+                <h3>Branding</h3>
+                <p>
+                    Memahami dasar identitas visual dan
+                    penerapan branding.
+                </p>
             </div>
 
 
-            <div class="project">
-
-                <img
-                    src="project4.jpg"
-                    alt="Project Social Media"
-                >
-
-                <div class="project-content">
-
-                    <h3>Social Media Design</h3>
-
-                    <p>
-                        Membuat konten visual
-                        untuk kebutuhan Instagram
-                        dan media sosial.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <img
-                    src="project5.jpg"
-                    alt="Project Video"
-                >
-
-                <div class="project-content">
-
-                    <h3>Video Project</h3>
-
-                    <p>
-                        Project video kreatif
-                        dengan konsep storytelling
-                        dan editing.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <img
-                    src="project6.jpg"
-                    alt="Creative Project"
-                >
-
-                <div class="project-content">
-
-                    <h3>Creative Project</h3>
-
-                    <p>
-                        Eksplorasi berbagai karya
-                        visual dalam bidang
-                        Desain Komunikasi Visual.
-                    </p>
-
-                </div>
-
+            <div class="skill-card">
+                <div class="skill-icon">LY</div>
+                <h3>Layout Design</h3>
+                <p>
+                    Mengatur elemen visual agar terlihat
+                    rapi, seimbang, dan mudah dipahami.
+                </p>
             </div>
 
         </div>
@@ -701,113 +846,40 @@
     </section>
 
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
+    <!-- ================= SOFTWARE ================= -->
 
-        <h2 class="section-title">
-            My <span>Experience</span>
-        </h2>
+    <section id="software">
 
-        <div class="experience">
-
-
-            <div class="experience-item">
-
-                <span>2025 — 2026</span>
-
-                <h3>
-                    School Creative Project
-                </h3>
-
-                <p>
-                    Mengikuti berbagai project kreatif
-                    yang berkaitan dengan desain grafis,
-                    fotografi, videografi, dan konten visual.
-                </p>
-
-            </div>
-
-
-            <div class="experience-item">
-
-                <span>2025 — 2026</span>
-
-                <h3>
-                    Design Project
-                </h3>
-
-                <p>
-                    Mengerjakan berbagai karya desain
-                    seperti poster, media sosial,
-                    packaging, branding, dan kebutuhan
-                    visual lainnya.
-                </p>
-
-            </div>
-
-
-            <div class="experience-item">
-
-                <span>2026</span>
-
-                <h3>
-                    Creative & Video Project
-                </h3>
-
-                <p>
-                    Terlibat dalam proses pembuatan
-                    karya video mulai dari ide,
-                    konsep, produksi, hingga editing.
-                </p>
-
-            </div>
-
+        <div class="section-label">
+            Software Skills
         </div>
 
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-
         <h2 class="section-title">
-            Let's <span>Connect</span>
+            Tools I use.
         </h2>
 
-        <p class="contact-text">
-            Tertarik melihat karya saya atau ingin
-            berkolaborasi dalam project kreatif?
-            Jangan ragu untuk menghubungi saya.
+        <p class="section-description">
+            Software yang digunakan untuk mendukung proses
+            desain dan produksi visual.
         </p>
 
 
-        <div class="social">
+        <div class="software-grid">
 
-            <a href="#">
-                Instagram
-            </a>
+            <div class="software-card">
+                <div class="software-name">Ai</div>
+                <p>Adobe Illustrator</p>
+            </div>
 
-            <a href="#">
-                Email
-            </a>
+            <div class="software-card">
+                <div class="software-name">Ps</div>
+                <p>Adobe Photoshop</p>
+            </div>
 
-            <a href="#">
-                WhatsApp
-            </a>
+            <div class="software-card">
+                <div class="software-name">Ae</div>
+                <p>After Effects</p>
+            </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        © 2026 Carissa Anandhita Putri
-        — DKV Portfolio
-
-    </footer>
-
-</body>
-</html>
-```
+            <div class="software-card">
+                <d
